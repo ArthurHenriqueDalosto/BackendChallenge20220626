@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\arthu\\source\\repos\\BackendChallenge\\BackendChallenge\\BackendChallenge.csproj": {}
+    "C:\\Users\\arthu\\Documents\\GitHub\\BackendChallenge20220626\\BackendChallenge\\BackendChallenge.csproj": {}
   },
   "projects": {
-    "C:\\Users\\arthu\\source\\repos\\BackendChallenge\\BackendChallenge\\BackendChallenge.csproj": {
+    "C:\\Users\\arthu\\Documents\\GitHub\\BackendChallenge20220626\\BackendChallenge\\BackendChallenge.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\arthu\\source\\repos\\BackendChallenge\\BackendChallenge\\BackendChallenge.csproj",
+        "projectUniqueName": "C:\\Users\\arthu\\Documents\\GitHub\\BackendChallenge20220626\\BackendChallenge\\BackendChallenge.csproj",
         "projectName": "BackendChallenge",
-        "projectPath": "C:\\Users\\arthu\\source\\repos\\BackendChallenge\\BackendChallenge\\BackendChallenge.csproj",
+        "projectPath": "C:\\Users\\arthu\\Documents\\GitHub\\BackendChallenge20220626\\BackendChallenge\\BackendChallenge.csproj",
         "packagesPath": "C:\\Users\\arthu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\arthu\\source\\repos\\BackendChallenge\\BackendChallenge\\obj\\",
+        "outputPath": "C:\\Users\\arthu\\Documents\\GitHub\\BackendChallenge20220626\\BackendChallenge\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\arthu\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\arthu\\source\\repos\\BackendChallenge\\ChallangeData\\ChallangeData.csproj": {
-                "projectPath": "C:\\Users\\arthu\\source\\repos\\BackendChallenge\\ChallangeData\\ChallangeData.csproj"
+              "C:\\Users\\arthu\\Documents\\GitHub\\BackendChallenge20220626\\ChallangeData\\ChallangeData.csproj": {
+                "projectPath": "C:\\Users\\arthu\\Documents\\GitHub\\BackendChallenge20220626\\ChallangeData\\ChallangeData.csproj"
               }
             }
           }
@@ -44,6 +44,10 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "HtmlAgilityPack": {
+              "target": "Package",
+              "version": "[1.11.46, )"
+            },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
@@ -90,14 +94,14 @@
         }
       }
     },
-    "C:\\Users\\arthu\\source\\repos\\BackendChallenge\\ChallangeData\\ChallangeData.csproj": {
+    "C:\\Users\\arthu\\Documents\\GitHub\\BackendChallenge20220626\\ChallangeData\\ChallangeData.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\arthu\\source\\repos\\BackendChallenge\\ChallangeData\\ChallangeData.csproj",
+        "projectUniqueName": "C:\\Users\\arthu\\Documents\\GitHub\\BackendChallenge20220626\\ChallangeData\\ChallangeData.csproj",
         "projectName": "ChallangeData",
-        "projectPath": "C:\\Users\\arthu\\source\\repos\\BackendChallenge\\ChallangeData\\ChallangeData.csproj",
+        "projectPath": "C:\\Users\\arthu\\Documents\\GitHub\\BackendChallenge20220626\\ChallangeData\\ChallangeData.csproj",
         "packagesPath": "C:\\Users\\arthu\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\arthu\\source\\repos\\BackendChallenge\\ChallangeData\\obj\\",
+        "outputPath": "C:\\Users\\arthu\\Documents\\GitHub\\BackendChallenge20220626\\ChallangeData\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\arthu\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -1,3 +1,4 @@
+using BackendChallenge;
 using ChallangeData.DataContext;
 using Microsoft.EntityFrameworkCore;
 
@@ -21,6 +22,15 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+IHost host = Host.CreateDefaultBuilder(args)
+    .ConfigureServices(services =>
+    {
+        services.AddHostedService<Worker>();
+    })
+    .Build();
+
+await host.RunAsync();
+
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
@@ -28,3 +38,4 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
