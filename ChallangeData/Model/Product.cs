@@ -12,8 +12,8 @@ namespace ChallangeData.Model
     {
         [Key]
         public int? Id { get; set; }
-        public int? code { get; set; }
-        public string barcode { get; set; }
+        public long? code { get; set; }
+        public string? barcode { get; set; }
         public Status? status { get; set; }
         public DateTime? imported_t { get; set; }
         public string? url { get; set; }

@@ -16,19 +16,19 @@ namespace ChallangeData.Migrations
                 name: "Products",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "integer", nullable: false)
+                    Id = table.Column<int>(type: "integer", nullable: true)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
-                    code = table.Column<int>(type: "integer", nullable: false),
-                    barcode = table.Column<string>(type: "text", nullable: false),
-                    status = table.Column<int>(type: "integer", nullable: false),
-                    importedt = table.Column<DateTime>(name: "imported_t", type: "timestamp with time zone", nullable: false),
-                    url = table.Column<string>(type: "text", nullable: false),
-                    productname = table.Column<string>(name: "product_name", type: "text", nullable: false),
-                    quantity = table.Column<string>(type: "text", nullable: false),
-                    categories = table.Column<string>(type: "text", nullable: false),
-                    packaging = table.Column<string>(type: "text", nullable: false),
-                    brands = table.Column<string>(type: "text", nullable: false),
-                    imageurl = table.Column<string>(name: "image_url", type: "text", nullable: false)
+                    code = table.Column<int>(type: "integer", nullable: true),
+                    barcode = table.Column<string>(type: "text", nullable: true),
+                    status = table.Column<int>(type: "integer", nullable: true),
+                    importedt = table.Column<DateTime>(name: "imported_t", type: "timestamp with time zone", nullable: true),
+                    url = table.Column<string>(type: "text", nullable: true),
+                    productname = table.Column<string>(name: "product_name", type: "text", nullable: true),
+                    quantity = table.Column<string>(type: "text", nullable: true),
+                    categories = table.Column<string>(type: "text", nullable: true),
+                    packaging = table.Column<string>(type: "text", nullable: true),
+                    brands = table.Column<string>(type: "text", nullable: true),
+                    imageurl = table.Column<string>(name: "image_url", type: "text", nullable: true)
                 },
                 constraints: table =>
                 {

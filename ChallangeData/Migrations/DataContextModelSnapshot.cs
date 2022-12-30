@@ -24,51 +24,43 @@ namespace ChallangeData.Migrations
 
             modelBuilder.Entity("ChallangeData.Model.Product", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int?>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer");
 
-                    NpgsqlPropertyBuilderExtensions.UseSerialColumn(b.Property<int>("Id"));
+                    NpgsqlPropertyBuilderExtensions.UseSerialColumn(b.Property<int?>("Id"));
 
                     b.Property<string>("barcode")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("brands")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("categories")
-                        .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int>("code")
-                        .HasColumnType("integer");
+                    b.Property<long?>("code")
+                        .HasColumnType("bigint");
 
                     b.Property<string>("image_url")
-                        .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<DateTime>("imported_t")
+                    b.Property<DateTime?>("imported_t")
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("packaging")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("product_name")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("quantity")
-                        .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int>("status")
+                    b.Property<int?>("status")
                         .HasColumnType("integer");
 
                     b.Property<string>("url")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.HasKey("Id");

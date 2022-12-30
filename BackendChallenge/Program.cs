@@ -1,41 +1,54 @@
 using BackendChallenge;
+using BackendChallenge.Services;
 using ChallangeData.DataContext;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 
-var builder = WebApplication.CreateBuilder(args);
-
-builder.Services.AddDbContext<DataContext>(
-    o => o.UseNpgsql(builder.Configuration.GetConnectionString("Default"))
-    );
-// Add services to the container.
-
-builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
-var app = builder.Build();
-
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+internal class Program
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
-
-IHost host = Host.CreateDefaultBuilder(args)
-    .ConfigureServices(services =>
+    private static async Task Main(string[] args)
     {
-        services.AddHostedService<Worker>();
-    })
-    .Build();
+        var builder = WebApplication.CreateBuilder(args);
 
-await host.RunAsync();
+        builder.Services.AddDbContext<DataContext>(
+            o => o.UseNpgsql(builder.Configuration.GetConnectionString("Default"))
+            );
 
-app.UseHttpsRedirection();
+        // Add services to the container.
+        builder.Services.AddMvc();
+        builder.Services.AddControllers();
+        // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+        builder.Services.AddEndpointsApiExplorer();
+        builder.Services.AddSwaggerGen();
+        var app = builder.Build();
 
-app.UseAuthorization();
+        // Configure the HTTP request pipeline.
+        if (app.Environment.IsDevelopment())
+        {
+            app.UseSwagger();
+            app.UseSwaggerUI();
+        }
 
-app.MapControllers();
+        IHost host = Host.CreateDefaultBuilder(args)
+            .ConfigureServices(services =>
+            {
+                services.AddHostedService<Worker>();
+                services.AddSingleton<IProductRepository, ProductRepository>();
 
-app.Run();
+                services.AddDbContext<DataContext>(
+           o => o.UseNpgsql(builder.Configuration.GetConnectionString("Default"))
+           );
+            })
+            .Build();
 
+        await host.RunAsync();
+
+        app.UseHttpsRedirection();
+
+        app.UseAuthorization();
+
+        app.MapControllers();
+
+        app.Run();
+    }
+}
