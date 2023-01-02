@@ -1,4 +1,4 @@
-﻿using ChallangeData.Model;
+﻿using ChallangeData.Model.Product;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;

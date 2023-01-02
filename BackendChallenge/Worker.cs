@@ -1,64 +1,116 @@
-﻿using BackendChallenge.Services;
-using ChallangeData.DataContext;
-using ChallangeData.Model;
+﻿using BackendChallenge.Repository;
+using BackendChallenge.Services;
+using ChallangeData.Model.Product;
 using HtmlAgilityPack;
-using Nest;
-using System.Data;
+using System;
 
 namespace BackendChallenge
 {
-
     public class Worker : BackgroundService
     {
         private readonly ILogger<Worker> _logger;
         private readonly IServiceProvider _serviceProvider;
-
-        public Worker(ILogger<Worker> logger, IServiceProvider serviceProvider)
+        private readonly IConfiguration _configuration;
+        private readonly PeriodicTimer timer = new PeriodicTimer(TimeSpan.FromMinutes(1));
+        public Worker(ILogger<Worker> logger, IServiceProvider serviceProvider, IConfiguration configuration)
         {
             _logger = logger;
             _serviceProvider = serviceProvider;
+            _configuration = configuration;
         }
 
-        public void StartScrapping()
+        protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
-            List<string> links = GetLinks("https://world.openfoodfacts.org/");
-            List<Product> products = GetProductDetails(links);
-
-            using (IServiceScope scope = _serviceProvider.CreateScope())
+            try
             {
-                IProductRepository scopedProcessingService =
-                    scope.ServiceProvider.GetRequiredService<IProductRepository>();
-
-
-                scopedProcessingService.Add(products);
-                scopedProcessingService.Commit();
+                while (DateTime.UtcNow.Hour == _configuration.GetValue<DateTime>("SchedulingOfScrapping").Hour
+                       && DateTime.UtcNow.Minute == _configuration.GetValue<DateTime>("SchedulingOfScrapping").Minute)
+                {
+                    await DoWorkAsync();
+                    await Task.Delay(60000);
+                }
+                await Task.Delay(1000, stoppingToken);
+                Task.CompletedTask.Dispose();
+                await Task.Factory.StartNew(async () => { await ExecuteAsync(stoppingToken); });
             }
-
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
+            }
         }
-        static HtmlDocument GetDocument(string url)
+        private async Task DoWorkAsync()
         {
+            try
+            {
+                List<string> links = GetLinks("https://world.openfoodfacts.org/").Result;
+                List<Product> products = GetProductDetails(links).Result;
+
+                using (IServiceScope scope = _serviceProvider.CreateScope())
+                {
+                    IProductRepository scopedProcessingService =
+                        scope.ServiceProvider.GetRequiredService<IProductRepository>();
+
+
+                    scopedProcessingService.Add(products);
+                    scopedProcessingService.Commit();
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
+            }
+            Task.CompletedTask.Wait();
+        }
+        private Task<List<string>> GetLinks(string url)
+        {
+            List<string> links = new List<string>();
+            try
+            {
+                HtmlDocument doc = GetDocument(url).Result;
+                HtmlNodeCollection linkCollection = doc.DocumentNode.SelectNodes("//div/div/div/div/ul/li/*");
+
+                Uri baseUri = new Uri(url);
+
+                foreach (var item in linkCollection)
+                {
+                    if (item.LinePosition == 10)
+                    {
+                        string href = item.Attributes["href"].Value;
+                        links.Add(new Uri(baseUri, relativeUri: href).AbsoluteUri);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
+            }
+            Task.CompletedTask.Dispose();
+            return Task.FromResult(links);
+        }
+        private Task<HtmlDocument> GetDocument(string url)
+        {
+            HtmlDocument document = new();
             try
             {
                 HtmlWeb web = new HtmlWeb();
-                HtmlDocument document = web.Load(url);
-                return document;
+                document = web.Load(url);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                _logger.LogError(ex.Message);
             }
+            Task.CompletedTask.Dispose();
+            return Task.FromResult(document);
         }
-        static List<Product> GetProductDetails(List<string> urls)
+        private Task<List<Product>> GetProductDetails(List<string> urls)
         {
+            List<Product> products = new List<Product>();
             try
             {
-
-                List<Product> products = new List<Product>();
                 foreach (var item in urls)
                 {
                     Product product = new Product();
-                    HtmlDocument document = GetDocument(item);
+                    HtmlDocument document = GetDocument(item).Result;
 
                     product.url = item;
                     product.code = long.Parse(document.DocumentNode.SelectSingleNode("//*[@id=\"barcode\"]").InnerText);
@@ -97,43 +149,13 @@ namespace BackendChallenge
                     product.imported_t = DateTime.UtcNow;
                     products.Add(product);
                 }
-                return products;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                _logger.LogError(ex.Message);
             }
-        }
-        static List<string> GetLinks(string url)
-        {
-            try
-            {
-                List<string> links = new List<string>();
-                HtmlDocument doc = GetDocument(url);
-                HtmlNodeCollection linkCollection = doc.DocumentNode.SelectNodes("//div/div/div/div/ul/li/*");
-
-                Uri baseUri = new Uri(url);
-
-                foreach (var item in linkCollection)
-                {
-                    if (item.LinePosition == 10)
-                    {
-                        string href = item.Attributes["href"].Value;
-                        links.Add(new Uri(baseUri, relativeUri: href).AbsoluteUri);
-                    }
-                }
-                return links;
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
-        protected override Task ExecuteAsync(CancellationToken stoppingToken)
-        {
-            StartScrapping();
-            throw new();
+            Task.CompletedTask.Dispose();
+            return Task.FromResult(products);
         }
     }
 }
