@@ -6,6 +6,10 @@ namespace BackendChallenge.Controllers
     public class MessageController : Controller
     {
         private readonly ILogger<MessageController> _logger;
+        public MessageController(ILogger<MessageController> logger)
+        {
+            _logger = logger;
+        }
 
         [HttpGet("")]
         public async Task<string> ReturnChallangeName()

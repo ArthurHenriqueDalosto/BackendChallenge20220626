@@ -5659,19 +5659,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\arthu\\.nuget\\packages\\": {}
+    "C:\\Users\\0379838\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\arthu\\Documents\\GitHub\\BackendChallenge20220626\\ChallangeData\\ChallangeData.csproj",
+      "projectUniqueName": "C:\\Users\\0379838\\Source\\Repos\\BackendChallenge20220626\\ChallangeData\\ChallangeData.csproj",
       "projectName": "ChallangeData",
-      "projectPath": "C:\\Users\\arthu\\Documents\\GitHub\\BackendChallenge20220626\\ChallangeData\\ChallangeData.csproj",
-      "packagesPath": "C:\\Users\\arthu\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\arthu\\Documents\\GitHub\\BackendChallenge20220626\\ChallangeData\\obj\\",
+      "projectPath": "C:\\Users\\0379838\\Source\\Repos\\BackendChallenge20220626\\ChallangeData\\ChallangeData.csproj",
+      "packagesPath": "C:\\Users\\0379838\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\0379838\\Source\\Repos\\BackendChallenge20220626\\ChallangeData\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\arthu\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\0379838\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5728,7 +5728,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

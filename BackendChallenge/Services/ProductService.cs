@@ -21,8 +21,6 @@ namespace BackendChallenge.Services
             this.productRepository = productRepository;
         }
 
-
-
         public Product FindByCode(Int64 code)
         {
             Product response = new();
@@ -37,7 +35,7 @@ namespace BackendChallenge.Services
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex.Message);
+                _logger.LogError(ex.Message + " " + ex.InnerException);
             }
             return response;
         }
@@ -56,7 +54,7 @@ namespace BackendChallenge.Services
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex.Message);
+                _logger.LogError(ex.Message + " " + ex.InnerException);
             }
             return response;
         }

@@ -29,7 +29,7 @@ namespace BackendChallenge.Controllers
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex.Message);
+                _logger.LogError(ex.Message + " " + ex.InnerException);
             }
             return response;
         }
@@ -44,7 +44,7 @@ namespace BackendChallenge.Controllers
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex.Message);
+                _logger.LogError(ex.Message + " " + ex.InnerException);
             }
             return response;
         }

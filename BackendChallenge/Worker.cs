@@ -1,5 +1,6 @@
 ﻿using BackendChallenge.Repository;
 using BackendChallenge.Services;
+using ChallangeData.Helper.Enum;
 using ChallangeData.Model.Product;
 using HtmlAgilityPack;
 using System;
@@ -35,7 +36,7 @@ namespace BackendChallenge
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex.Message);
+                _logger.LogError(ex.Message + " " + ex.InnerException);
             }
         }
         private async Task DoWorkAsync()
@@ -57,7 +58,7 @@ namespace BackendChallenge
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex.Message);
+                _logger.LogError(ex.Message + " " + ex.InnerException);
             }
             Task.CompletedTask.Wait();
         }
@@ -73,7 +74,7 @@ namespace BackendChallenge
 
                 foreach (var item in linkCollection)
                 {
-                    if (item.LinePosition == 10)
+                    if (links.Count < 100 && item.LinePosition == 10)
                     {
                         string href = item.Attributes["href"].Value;
                         links.Add(new Uri(baseUri, relativeUri: href).AbsoluteUri);
@@ -82,7 +83,7 @@ namespace BackendChallenge
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex.Message);
+                _logger.LogError(ex.Message + " " + ex.InnerException);
             }
             Task.CompletedTask.Dispose();
             return Task.FromResult(links);
@@ -97,7 +98,7 @@ namespace BackendChallenge
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex.Message);
+                _logger.LogError(ex.Message + " " + ex.InnerException);
             }
             Task.CompletedTask.Dispose();
             return Task.FromResult(document);
@@ -147,12 +148,13 @@ namespace BackendChallenge
                         product.brands = "Brands data is not available from the source!";
 
                     product.imported_t = DateTime.UtcNow;
+                    product.status = Status.Imported;
                     products.Add(product);
                 }
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex.Message);
+                _logger.LogError(ex.Message + " " + ex.InnerException);
             }
             Task.CompletedTask.Dispose();
             return Task.FromResult(products);
