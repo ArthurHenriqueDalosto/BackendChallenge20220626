@@ -74,7 +74,7 @@ Após concluir todas as etapas, acesse : localhost:8080/swagger/index.html
 
 
 
-
+OBS: CASO TENHA ALGUM PROBLEMA/DIFICULDADE SIGA ESTE PASSO A PASSO: https://youtu.be/LGKMwQcRC_c
 
 
 
