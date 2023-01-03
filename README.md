@@ -46,7 +46,7 @@ Para rodar o projeto, você deve seguir as seguintes instruções.
 
 7 - Informe a hora e o minuto em que deseja realizar o Scraping diário:   
 
-!Atenção:o horário é UTC então sempre adicione 3 horas a mais, caso queira rodar o scrap ao meio dia, deverá escrever 09:00:00 (sugundos não influenciam);           
+!Atenção:o horário é UTC então sempre adicione 3 horas a mais, caso queira rodar o scrap ao meio dia, deverá escrever 09:00:00 (segundos não influenciam);           
                                                                                                                                                               
 ![image](https://user-images.githubusercontent.com/90391201/210363293-2d68adb1-1ee7-4936-b958-ba60c9b656c3.png)
 
