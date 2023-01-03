@@ -36,12 +36,12 @@ Para rodar o projeto, você deve seguir as seguintes instruções.
 4 - Adicione o container do Postgres na rede:
 > docker network connect docker-network postgres
 
-7 - Vá até o arquivo appsettings.json dentro do projeto BackendChallenge e informe a hora e o minuto em que deseja realizar o Scraping diário:                             
+5 - Vá até o arquivo appsettings.json dentro do projeto BackendChallenge e informe a hora e o minuto em que deseja realizar o Scraping diário:                             
 !Atenção:o horário é UTC então sempre adicione 3 horas a mais, caso queira rodar o scrap ao meio dia, deverá escrever 09:00:00 (segundos não influenciam);           
                                                                                                                                                               
 ![image](https://user-images.githubusercontent.com/90391201/210363293-2d68adb1-1ee7-4936-b958-ba60c9b656c3.png)
 
-9 - Adicione uma Migration utilizando o Console do Gerenciador de Pacotes do Projeto:
+6 - Adicione uma Migration utilizando o Console do Gerenciador de Pacotes do Projeto:
 
 Atenção: selecione ChallangeData com projeto padrão e certifique-se que seu startup project esteja assim:                                                               
 ![image](https://user-images.githubusercontent.com/90391201/210361264-e4158f92-dcdc-46a1-a108-f0f287c7e6a1.png)
@@ -49,11 +49,21 @@ Atenção: selecione ChallangeData com projeto padrão e certifique-se que seu s
                                                                                                                                                                  
 > add-migration v.0.1
 
-10 - Update no banco de dados:
+7 - Update no banco de dados:
 
 Atenção: selecione BackendChallenge como projeto padrão                                                                                                                                                                                                                                                    
 ![image](https://user-images.githubusercontent.com/90391201/210361747-21c6453c-2b29-49d1-b6b5-7f42a9b79862.png)
 > Update-Database
+
+8 - Inspecione a rede
+> docker network inspect docker-network
+
+9 - Procure pelo Ipv4 do docker postgres                                                                                                                               
+                                                                                                                                                          
+![image](https://user-images.githubusercontent.com/90391201/210358491-2fed7192-ec10-4323-a545-c75c38871b30.png)
+
+10 - Vá até o arquivo appsettings.json dentro do projeto BackendChallenge e troque o IP da connection string pelo IPV4:                                                                                                                                                                                                               
+![image](https://user-images.githubusercontent.com/90391201/210363201-a8d35ffa-d178-4abe-b267-0b14fe832156.png)
 
 11 - Navegue até a pasta  /BackendChallenge20220626
 
@@ -63,7 +73,7 @@ Atenção: selecione BackendChallenge como projeto padrão
 13 - Rode o projeto:
 > docker run --name backendchallenge -p 8080:80  productive-dev/backendchallenge
 
-14 - Adicione a o container na Newtork criada anteriormente:
+14  - Adicione a o container na Newtork criada anteriormente:
 > docker network connect docker-network backendchallenge
 
 Após concluir todas as etapas, acesse : localost:8080/swagger/index.html;
