@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/7sowZ2Gmyiir58yQxLl6LuYwQluX3b6jApbX3X441IeNYXHdXh5O8pLCadLnahQuE51WuQ8wZ2cpRDVQT/FOg==",
+  "dgSpecHash": "VEf5gHw18cjOiqgGt5hGx5Xw74/SoCphYLmY3ioFRElVq4S2qX0Ks40iAf0Y0UOh8qIVS6ZHg7gQEldeVjB9jA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\arthu\\Documents\\GitHub\\newer-resolved\\BackendChallenge-release\\ChallangeData\\ChallangeData.csproj",
+  "projectFilePath": "C:\\Users\\arthu\\Documents\\GitHub\\BackendChallenge20220626\\ChallangeData\\ChallangeData.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\arthu\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\arthu\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.1\\microsoft.entityframeworkcore.7.0.1.nupkg.sha512",
