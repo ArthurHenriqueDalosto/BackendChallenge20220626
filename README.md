@@ -13,7 +13,7 @@ Pacote Referenciados: HtmlAgilityPack(V1.11.46), Swashbuckle.AspNetCore(V6.2.3);
 Projetos Referenciados: ChallangeData.csproj;
 
 | ChallangeData |
-Descricao: Uma Library responsável por gerenciar os modelos e as mirações;
+Descrição: Uma Library responsável por gerenciar os modelos e as migrações;
 Pacotes Referenciados: Microsoft.EntityFrameworkCore.Relational.Design (V1.1.6), Npgsql.EntityFrameworkCore.PostgreSQL=(V7.0.1),
 Microsoft.EntityFrameworkCore.Tools(V7.0.1);
 
