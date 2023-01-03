@@ -55,11 +55,11 @@ Atenção: selecione BackendChallenge como projeto padrão
 ![image](https://user-images.githubusercontent.com/90391201/210361747-21c6453c-2b29-49d1-b6b5-7f42a9b79862.png)
 > Update-Database
 
-8 - Inspecione a rede
+8 - Usando o Powershell, Inspecione a rede
 > docker network inspect docker-network
 
-9 - Procure pelo Ipv4 do docker postgres                                                                                                                               
-                                                                                                                                                          
+9 - Procure pelo Ipv4 do docker postgres                                                                                                                             
+                                                                                                                                                      
 ![image](https://user-images.githubusercontent.com/90391201/210358491-2fed7192-ec10-4323-a545-c75c38871b30.png)
 
 10 - Vá até o arquivo appsettings.json dentro do projeto BackendChallenge e troque o IP da connection string pelo IPV4:                                                                                                                                                                                                               
@@ -76,7 +76,7 @@ Atenção: selecione BackendChallenge como projeto padrão
 14  - Adicione a o container na Newtork criada anteriormente:
 > docker network connect docker-network backendchallenge
 
-Após concluir todas as etapas, acesse : localost:8080/swagger/index.html;
+Após concluir todas as etapas, acesse : localhost:8080/swagger/index.html
 
 
 
