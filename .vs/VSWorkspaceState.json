@@ -1,8 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\BackendChallenge"
+    "\\BackendChallenge",
+    "\\BackendChallenge\\Properties"
   ],
-  "SelectedNode": "\\BackendChallenge\\Worker.cs",
+  "SelectedNode": "\\BackendChallenge\\appsettings.json",
   "PreviewInSolutionExplorer": false
 }
