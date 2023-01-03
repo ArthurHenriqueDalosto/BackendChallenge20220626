@@ -6,21 +6,14 @@ Framework: .NET 6.0
 
 Este projeto tem como função realizar o Scraping do site https://world.openfoodfacts.org/, armazenando os dados em um banco de dados relacional.
 
-
 | BackendChallenge | 
 Descrição: Realiza o Scraping no horário designado e responde as requisições do usuário;
-Pacote Referenciados: HtmlAgilityPack(V1.11.46), Swashbuckle.AspNetCore(V6.2.3);
-Projetos Referenciados: ChallangeData.csproj;
 
 | ChallangeData |
 Descrição: Uma Library responsável por gerenciar os modelos e as migrações;
-Pacotes Referenciados: Microsoft.EntityFrameworkCore.Relational.Design (V1.1.6), Npgsql.EntityFrameworkCore.PostgreSQL=(V7.0.1),
-Microsoft.EntityFrameworkCore.Tools(V7.0.1);
 
 | BackendChallengeTest |
 Descrição: Realiza os testes unitários nos endpoints da Api BackendChallenge;
-Pacotes Referenciados: Microsoft.AspNetCore.Mvc.Testing(V6.0.3), Microsoft.NET.Test.Sdk(V17.3.2), NUnit(V3.13.3), NUnit3TestAdapter(V4.2.1);
-Pacotes Referenciados: BackendChallenge.csproj, ChallangeData.csproj.
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
 Para rodar o projeto, você deve seguir as seguintes instruções.
@@ -36,12 +29,8 @@ Para rodar o projeto, você deve seguir as seguintes instruções.
 4 - Adicione o container do Postgres na rede:
 > docker network connect docker-network postgres
 
-5 - Vá até o arquivo appsettings.json dentro do projeto BackendChallenge e informe a hora e o minuto em que deseja realizar o Scraping diário:                             
-!Atenção:o horário é UTC então sempre adicione 3 horas a mais, caso queira rodar o scrap ao meio dia, deverá escrever 09:00:00 (segundos não influenciam);           
-                                                                                                                                                              
-![image](https://user-images.githubusercontent.com/90391201/210363293-2d68adb1-1ee7-4936-b958-ba60c9b656c3.png)
 
-6 - Adicione uma Migration utilizando o Console do Gerenciador de Pacotes do Projeto:
+5 - Adicione uma Migration utilizando o Console do Gerenciador de Pacotes do Projeto:
 
 Atenção: selecione ChallangeData com projeto padrão e certifique-se que seu startup project esteja assim:                                                               
 ![image](https://user-images.githubusercontent.com/90391201/210361264-e4158f92-dcdc-46a1-a108-f0f287c7e6a1.png)
@@ -49,21 +38,26 @@ Atenção: selecione ChallangeData com projeto padrão e certifique-se que seu s
                                                                                                                                                                  
 > add-migration v.0.1
 
-7 - Update no banco de dados:
+6 - Update no banco de dados:
 
 Atenção: selecione BackendChallenge como projeto padrão                                                                                                                                                                                                                                                    
 ![image](https://user-images.githubusercontent.com/90391201/210361747-21c6453c-2b29-49d1-b6b5-7f42a9b79862.png)
 > Update-Database
 
-8 - Usando o Powershell, Inspecione a rede
+7 - Usando o Powershell, Inspecione a rede
 > docker network inspect docker-network
 
-9 - Procure pelo Ipv4 do docker postgres                                                                                                                             
+8 - Procure pelo Ipv4 do docker postgres                                                                                                                             
                                                                                                                                                       
 ![image](https://user-images.githubusercontent.com/90391201/210358491-2fed7192-ec10-4323-a545-c75c38871b30.png)
 
-10 - Vá até o arquivo appsettings.json dentro do projeto BackendChallenge e troque o IP da connection string pelo IPV4:                                                                                                                                                                                                               
+9 - No arquivo appsettings.json dentro do projeto BackendChallenge e troque o IP da connection string pelo IPV4:                                                                                                                                                                                                               
 ![image](https://user-images.githubusercontent.com/90391201/210363201-a8d35ffa-d178-4abe-b267-0b14fe832156.png)
+
+10 - Ainda no arquivo appsettings.json dentro do projeto BackendChallenge e informe a hora e o minuto em que deseja realizar o Scraping diário:                             
+!Atenção:o horário é UTC então sempre adicione 3 horas a mais, caso queira rodar o scrap ao meio dia, deverá escrever 09:00:00 (segundos não influenciam);           
+                                                                                                                                                              
+![image](https://user-images.githubusercontent.com/90391201/210363293-2d68adb1-1ee7-4936-b958-ba60c9b656c3.png)
 
 11 - Navegue até a pasta  /BackendChallenge20220626
 
