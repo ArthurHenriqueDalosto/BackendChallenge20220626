@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "N7atchp+xmMUsbHZB+dn0uibivp7pARkm9V6qK8dXqgy9ZRpqu6mQP6yh92qzPsV6eIJOWVelZI9Y8ASPGzZzQ==",
+  "dgSpecHash": "T7vrmDqHgcyFjYHCJKDBKsc+vY6JapTDoyEawz9tWpxw5ANPnwkbhGRHdwTGGJi9pgE9U84OEhI6Zf4tGQmbxw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\arthu\\Documents\\GitHub\\pre-release\\BackendChallenge20220626\\BackendChallenge\\BackendChallenge.csproj",
+  "projectFilePath": "C:\\Users\\arthu\\Documents\\GitHub\\newer-resolved\\BackendChallenge-release\\BackendChallenge\\BackendChallenge.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\arthu\\.nuget\\packages\\htmlagilitypack\\1.11.46\\htmlagilitypack.1.11.46.nupkg.sha512",
     "C:\\Users\\arthu\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

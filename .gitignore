@@ -45,3 +45,12 @@ BackendChallenge/obj/Release/net6.0/BackendChallenge.csproj.AssemblyReference.ca
 BackendChallenge/obj/Release/net6.0/BackendChallenge.GeneratedMSBuildEditorConfig.editorconfig
 ChallangeData/obj/Release/net6.0/ChallangeData.assets.cache
 ChallangeData/obj/Release/net6.0/ChallangeData.GeneratedMSBuildEditorConfig.editorconfig
+*.sqlite
+*.v2
+*.dll
+*.lock
+.vs/BackendChallenge-release/v17/.wsuo
+*.v2
+.vs/BackendChallenge/v17/.suo
+.vs/slnx.sqlite
+BackendChallenge/obj/Debug/net6.0/BackendChallenge.csproj.AssemblyReference.cache

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "QI+Dd0bk7ocOLbB4OoBzfZO7zBT7uG60W3NT1WxLiYwQy1TpV1VZaYgs7fDJq+t/NTpqr6rT0ZDzPm0+SdmHEQ==",
+  "dgSpecHash": "iezAg/dvpmzZPvkChiK5YHHhqOENY1cndkSgbyTY88YrgWxY5nrnpVP1IMDjl1Rg5I8rQn8Fq+aVdEPTQSp/mA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\arthu\\Documents\\GitHub\\pre-release\\BackendChallenge20220626\\BackendChallengeTest\\BackendChallengeTest.csproj",
+  "projectFilePath": "C:\\Users\\arthu\\Documents\\GitHub\\newer-resolved\\BackendChallenge-release\\BackendChallengeTest\\BackendChallengeTest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\arthu\\.nuget\\packages\\htmlagilitypack\\1.11.46\\htmlagilitypack.1.11.46.nupkg.sha512",
     "C:\\Users\\arthu\\.nuget\\packages\\microsoft.aspnetcore.mvc.testing\\6.0.3\\microsoft.aspnetcore.mvc.testing.6.0.3.nupkg.sha512",

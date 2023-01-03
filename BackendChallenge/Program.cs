@@ -11,7 +11,7 @@ internal class Program
     {
         var builder = WebApplication.CreateBuilder(args);
 
-        builder.Services.AddDbContext<DataContext>(
+        builder.Services.AddDbContext<DataBaseContext>(
             o => o.UseNpgsql(builder.Configuration.GetConnectionString("Default"))
             );
 
@@ -38,7 +38,7 @@ internal class Program
             {
                 services.AddHostedService<Worker>();
                 services.AddSingleton<IProductRepository, ProductRepository>();
-                services.AddDbContext<DataContext>(o => o.UseNpgsql(builder.Configuration.GetConnectionString("Default")));
+                services.AddDbContext<DataBaseContext>(o => o.UseNpgsql(builder.Configuration.GetConnectionString("Default")));
             }).Build();
         await host.RunAsync();
 

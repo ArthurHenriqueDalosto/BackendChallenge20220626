@@ -8,12 +8,12 @@ using System.Threading.Tasks;
 
 namespace ChallangeData.DataContext
 {
-    public class DataContext : DbContext
+    public class DataBaseContext : DbContext
     {
-        public DataContext()
+        public DataBaseContext()
         {
         }
-        public DataContext(DbContextOptions<DataContext> options):
+        public DataBaseContext(DbContextOptions<DataBaseContext> options):
             base(options)
         {
         }

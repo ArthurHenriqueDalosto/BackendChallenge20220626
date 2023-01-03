@@ -12,9 +12,9 @@ namespace BackendChallenge.Repository
     }
     public class ProductRepository : IProductRepository
     {
-        private readonly DataContext db;
+        private readonly DataBaseContext db;
 
-        public ProductRepository(DataContext db)
+        public ProductRepository(DataBaseContext db)
         {
             this.db = db;
         }

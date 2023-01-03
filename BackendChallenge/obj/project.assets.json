@@ -6125,11 +6125,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\arthu\\Documents\\GitHub\\pre-release\\BackendChallenge20220626\\BackendChallenge\\BackendChallenge.csproj",
+      "projectUniqueName": "C:\\Users\\arthu\\Documents\\GitHub\\newer-resolved\\BackendChallenge-release\\BackendChallenge\\BackendChallenge.csproj",
       "projectName": "BackendChallenge",
-      "projectPath": "C:\\Users\\arthu\\Documents\\GitHub\\pre-release\\BackendChallenge20220626\\BackendChallenge\\BackendChallenge.csproj",
+      "projectPath": "C:\\Users\\arthu\\Documents\\GitHub\\newer-resolved\\BackendChallenge-release\\BackendChallenge\\BackendChallenge.csproj",
       "packagesPath": "C:\\Users\\arthu\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\arthu\\Documents\\GitHub\\pre-release\\BackendChallenge20220626\\BackendChallenge\\obj\\",
+      "outputPath": "C:\\Users\\arthu\\Documents\\GitHub\\newer-resolved\\BackendChallenge-release\\BackendChallenge\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\arthu\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -6146,8 +6146,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\arthu\\Documents\\GitHub\\pre-release\\BackendChallenge20220626\\ChallangeData\\ChallangeData.csproj": {
-              "projectPath": "C:\\Users\\arthu\\Documents\\GitHub\\pre-release\\BackendChallenge20220626\\ChallangeData\\ChallangeData.csproj"
+            "C:\\Users\\arthu\\Documents\\GitHub\\newer-resolved\\BackendChallenge-release\\ChallangeData\\ChallangeData.csproj": {
+              "projectPath": "C:\\Users\\arthu\\Documents\\GitHub\\newer-resolved\\BackendChallenge-release\\ChallangeData\\ChallangeData.csproj"
             }
           }
         }

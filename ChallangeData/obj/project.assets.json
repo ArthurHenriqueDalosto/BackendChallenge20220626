@@ -5664,11 +5664,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\arthu\\Documents\\GitHub\\pre-release\\BackendChallenge20220626\\ChallangeData\\ChallangeData.csproj",
+      "projectUniqueName": "C:\\Users\\arthu\\Documents\\GitHub\\newer-resolved\\BackendChallenge-release\\ChallangeData\\ChallangeData.csproj",
       "projectName": "ChallangeData",
-      "projectPath": "C:\\Users\\arthu\\Documents\\GitHub\\pre-release\\BackendChallenge20220626\\ChallangeData\\ChallangeData.csproj",
+      "projectPath": "C:\\Users\\arthu\\Documents\\GitHub\\newer-resolved\\BackendChallenge-release\\ChallangeData\\ChallangeData.csproj",
       "packagesPath": "C:\\Users\\arthu\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\arthu\\Documents\\GitHub\\pre-release\\BackendChallenge20220626\\ChallangeData\\obj\\",
+      "outputPath": "C:\\Users\\arthu\\Documents\\GitHub\\newer-resolved\\BackendChallenge-release\\ChallangeData\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\arthu\\AppData\\Roaming\\NuGet\\NuGet.Config",
