@@ -23,7 +23,7 @@ Para rodar o projeto, você deve seguir as seguintes instruções.
 2 - Crie um Postgres com Docker:
 > docker run --name postgres -p 5432:5432 -e POSTGRES_PASSWORD=123 -d postgres
 
-3 - Crie uma Docker Newtwork (Para comunicação entre os containers):
+3 - Crie uma Docker Network (Para comunicação entre os containers):
 > docker network create docker-network
 
 4 - Adicione o container do Postgres na rede:
