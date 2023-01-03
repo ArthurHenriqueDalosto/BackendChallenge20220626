@@ -1,7 +1,7 @@
 # Backend Challenge 20220626
 Challenge by Coodesh
 
-Sdk: Microsoft.NET.Sdk
+Sdk: Microsoft.NET.Sdk                                                                                                                                                 
 Framework: .NET 6.0
 
 Este projeto tem como função realizar o Scraping do site https://world.openfoodfacts.org/, armazenando os dados em um banco de dados relacional.
