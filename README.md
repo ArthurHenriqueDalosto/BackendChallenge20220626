@@ -33,8 +33,8 @@ Para rodar o projeto, você deve seguir as seguintes instruções.
 5 - Adicione uma Migration utilizando o Console do Gerenciador de Pacotes do Projeto:
 
 Atenção: selecione ChallangeData com projeto padrão e certifique-se que seu startup project esteja assim:                                                               
-![image](https://user-images.githubusercontent.com/90391201/210361264-e4158f92-dcdc-46a1-a108-f0f287c7e6a1.png)
-![image](https://user-images.githubusercontent.com/90391201/210436925-e98177cb-e45f-46b9-bbfe-d4d557af40fe.png)
+![image](https://user-images.githubusercontent.com/90391201/210361264-e4158f92-dcdc-46a1-a108-f0f287c7e6a1.png)                                                         
+![image](https://user-images.githubusercontent.com/90391201/210547843-acb4766b-2914-4ac3-acaa-c8ffe66f079d.png)
                                                                                                                                                                  
 > add-migration v.0.1
 
